@@ -86,6 +86,7 @@ nav {
 	transform: translateY(-50%);
 	margin-right: 40px;
 	font-weight: 600;
+	cursor: pointer;
 }
 #start p {
 	float: left;
@@ -130,7 +131,6 @@ nav {
 	margin:  0 auto;
 	background-color: rgba(240, 240, 240, 0.9);
 	border-radius: 20px;
-	opacity: 0;
 	display: none;
 	text-align: center;
 	padding: 40px;
@@ -202,7 +202,7 @@ select {
 .sign-in-button img {
 	margin: auto 15px auto auto;
 }
-.orange-button{
+.orange-button {
 	background-color: var(--main-color);
 	width: 100%;
 	height: 40px;
@@ -211,15 +211,61 @@ select {
 	color: white;
 	cursor: pointer;
 }
+#cookies-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	backdrop-filter: brightness(50%);
+	overflow-y: scroll;
+}
+#cookies {
+	position: fixed;
+	background-color: white;
+	border-radius: 17px;
+	text-align: center;
+	bottom: 40px;
+	left: 100px;
+	width: 430px;
+}
+#cookies button {
+	width: 335px;
+	display: block;
+	margin: 0 auto 10px auto;
+	border: none;
+	border-radius: 20px;
+	height: 40px;
+	cursor: pointer;
+}
+#cookie-title {
+	font-weight: 600;
+}
 span {
 	font-weight: 600;
 	color: #707070;
 	cursor: pointer;
 }
+#cookies span {
+	color: var(--main-color);
+}
+#cookie-settings {
+	display: none;
+	position: fixed;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 100px;
+	border-radius: 20px;
+	width: 750px;
+	height: 620px;
+	background-color: white;
+
+}
 .stop-scroll {
 	height: 100%;
 	overflow-y: hidden;
-
 }
 .show {
 	animation: opacity 1s;

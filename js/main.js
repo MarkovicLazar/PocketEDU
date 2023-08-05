@@ -9,7 +9,9 @@ window.onload = () => {
 	const body = document.body;
 	const loginButton = document.getElementById('nav-login');
 	const login = document.getElementById('login');
-	const forgotPassword = document.getElementById('forgot-password');
+	const cookies = document.getElementById('cookies');
+	const cookieSettings = document.getElementById('cookie-settings');
+	const cookiesBackground = document.getElementById('cookies-background');
 	startButton.onmouseenter = () => {
 		startBackground.style.width = '45px';
 	}
@@ -19,29 +21,21 @@ window.onload = () => {
 	blurBackground.onclick = (event) => {
 		if (signInShown && !signIn.contains(event.target)) {
 			blurBackground.classList.add('hide');
-			signIn.classList.add('hide');
 			body.classList.remove('stop-scroll');
 			setTimeout(() => {
-				signIn.style.opacity = '0%';
 				blurBackground.style.opacity = '100%';
-				signIn.style.display = 'none';
 				blurBackground.style.display = 'none';
 				blurBackground.classList.remove('hide');
-				signIn.classList.remove('hide');
 				signInShown = false;
 			}, 1000);
 		}
 		else if (loginShown && !login.contains(event.target)) {
 			blurBackground.classList.add('hide');
-			login.classList.add('hide');
 			body.classList.remove('stop-scroll');
 			setTimeout(() => {
-				login.style.opacity = '0%';
 				blurBackground.style.opacity = '100%';
-				login.style.display = 'none';
 				blurBackground.style.display = 'none';
 				blurBackground.classList.remove('hide');
-				login.classList.remove('hide');
 				loginShown = false;
 			}, 1000);
 		}
@@ -51,13 +45,10 @@ window.onload = () => {
 			signIn.style.display = 'block';
 			blurBackground.style.display = 'block';
 			blurBackground.classList.add('show');
-			signIn.classList.add('show');
 			body.classList.add('stop-scroll');
 			setTimeout(() => {
 				signInShown = true;
-				signIn.style.opacity = '100%';
 				blurBackground.style.opacity = '100%';
-				signIn.classList.remove('show');
 				blurBackground.classList.remove('show');
 			}, 1000);
 		}
@@ -69,16 +60,12 @@ window.onload = () => {
 	}
 	loginButton.onclick = () => {
 		if(!loginShown) {
-			login.style.display = 'block';
 			blurBackground.style.display = 'block';
 			blurBackground.classList.add('show');
-			login.classList.add('show');
 			body.classList.add('stop-scroll');
 			setTimeout(() => {
 				loginShown = true;
-				login.style.opacity = '100%';
 				blurBackground.style.opacity = '100%';
-				login.classList.remove('show');
 				blurBackground.classList.remove('show');
 			}, 1000);
 		}
@@ -100,7 +87,37 @@ window.onload = () => {
 		}, 1000);
 	}
 	document.getElementById('already-have-account').onclick = () => {
-
+		signIn.classList.add('hide');
+		setTimeout(() => {
+			signIn.style.opacity = '0%';
+			signIn.style.display = 'none';
+			signIn.classList.remove('hide');
+			signInShown = false;
+		}, 1000);
+		login.style.display = 'block';
+		login.classList.add('show');
+		setTimeout(() => {
+			loginShown = true;
+			login.style.opacity = '100%';
+			login.classList.remove('show');
+		}, 1000);
+	}
+	document.getElementById('accept-cookies').onclick = () => {
+		cookiesBackground.classList.add('hide');
+		setTimeout(() => {
+			cookiesBackground.style.display = 'none';
+			cookiesBackground.classList.remove('hide');
+		}, 1000);
+	}
+	document.getElementById('cookie-settings-button').onclick = () => {
+		cookieSettings.style.display = 'block';
+		cookieSettings.classList.add('show');
+		cookies.classList.add('hide');
+		body.classList.add('stop-scroll');
+		setTimeout(() => {
+			cookies.style.display = 'none';
+			cookies.classList.remove('hide');
+		}, 1000);
 	}
 }
 
