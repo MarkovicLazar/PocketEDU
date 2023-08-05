@@ -26,7 +26,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div id="sign-in-pozadina" class="blur-background">
+	<div id="blur-background">
 		<div id="sign-in">
 			<img src="img/logo.svg" id="sign-in-logo">
 			<p>Please enter your details to join</p>
@@ -291,8 +291,8 @@
 			</select>
 			<p id="country-error" style="color: red; display: none">*Please select a country.</p>
 			<p style="color: var(--main-color)">By creating an account you agree to receive email communication from PocketEDU and to our Terms of Use and Privacy Policy</p>
-			<p><a href="#container">Terms of Use</a> and <a>Privacy Policy</a></p>
-			<button id="join">Join with email</button>
+			<p><span>Terms of Use</span> and <span>Privacy Policy</span></p>
+			<button id="join" class="orange-button">Join with email</button>
 			<p>or</p>
 			<button class="sign-in-button">
 				<img src="img/google_icon.svg">
@@ -310,12 +310,36 @@
 				<img src="img/apple_icon.svg">
 				Join with Apple
 			</button>
-			<p>Already have an account? Log in</p>
+			<p>Already have an account? <span id="already-have-account">Log in</span></p>
 		</div>
-	</div>
-	<div id="lginin-pozadina" class="blur-background">
 		<div id="login">
-
+			<img src="img/logo.svg">
+			<h2>Welcome back</h2>
+			<p>Please enter your details to log in</p>
+			<label for="login-email">Email</label>
+			<input id="login-email" type="email">
+			<label for="login-password">Password</label>
+			<input id="login-password" type="password">
+			<p id="forgot-password">Forgot password?</p>
+			<button class="orange-button" id="login-button">Log In</button>
+			<p>Don't have an account? <span id="create-account">Create one</span></p>
+			<p>or</p>
+			<button class="sign-in-button">
+				<img src="img/google_icon.svg">
+				Join with Google
+			</button>
+			<button class="sign-in-button">
+				<img src="img/facebook_icon.png">
+				Join with Facebook
+			</button>
+			<button class="sign-in-button">
+				<img src="img/linkedin_icon.png">
+				Join with LinkedIn
+			</button>
+			<button class="sign-in-button">
+				<img src="img/apple_icon.svg">
+				Join with Apple
+			</button>
 		</div>
 	</div>
 	<div id="container">
