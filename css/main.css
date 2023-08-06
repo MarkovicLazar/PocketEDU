@@ -264,9 +264,33 @@ span {
 	width: 750px;
 	height: 620px;
 	background-color: white;
-
+	padding: 20px;
 }
-
+#cookie-settings hr {
+	margin: 0;
+	background-color: var(--main-color);
+}
+#cookie-settings .orange-button {
+	width: fit-content;
+	font-size: 15px;
+	font-weight: 600;
+	padding: 0 30px;
+	margin-top: 10px;
+}
+#cookies-settings div {
+	width: 100%;
+	height: 100%;
+}
+#cookie-settings h4:hover,
+.cookie-active {
+	text-decoration: underline;
+	text-decoration-color: var(--main-color);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 5px;
+}
+#cookies-text div {
+	position: absolute;
+}
 .stop-scroll {
 	height: 100%;
 	overflow-y: hidden;

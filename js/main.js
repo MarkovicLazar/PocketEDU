@@ -1,3 +1,19 @@
+function hide(x) {
+	x.classList.add('hide');
+	setTimeout(() => {
+		x.style.display = 'none';
+		x.style.opacity = '100%';
+		x.classList.remove('hide');
+	}, 900);
+}
+function show(x) {
+	x.style.display = 'block';
+	x.classList.add('show');
+	setTimeout(() => {
+		x.style.opacity = '100%';
+		x.classList.remove('show');
+	}, 900);
+}
 window.onload = () => {
 	const startButton = document.getElementById('start');
 	const startBackground = document.getElementById('start-pozadina');
