@@ -138,6 +138,10 @@ window.onload = () => {
 			cookies.classList.remove('hide');
 		}, 900);
 	}
+	document.getElementById('allow-all').onclick = () => {
+		hide(cookiesBackground);
+		setTimeout(() => body.classList.remove('stop-scroll'), 900);
+	}
 }
 
 
