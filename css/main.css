@@ -28,7 +28,7 @@ nav {
 	top: 23px;
 	left: 0;
 	right: 0;
-	margin: auto;
+	margin: 0 auto -60px auto;
 	z-index: 1;
 }
 #menu {
@@ -114,11 +114,25 @@ nav {
 	top: -1400px;
 	left: 50%;
 	transform: translateX(-50%);
+	margin: 0 0 -712px 0;
+}
+#hero {
+	position: absolute;
+	top: 40%;
+}
+#hero p {
+	margin: 0;
+}
+#hero img{
+	position: absolute;
+	opacity: 80%;
 }
 #pozadina {
+	margin: 0;
 	position: relative;
 	left: -600px;
 	top: -500px;
+	float: left;
 }
 #sign-in, #login {
 	position: fixed;

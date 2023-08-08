@@ -36,38 +36,29 @@ window.onload = () => {
 	}
 	blurBackground.onclick = (event) => {
 		if (signInShown && !signIn.contains(event.target)) {
-			blurBackground.classList.add('hide');
+			hide(blurBackground);
+			hide(signIn);
 			setTimeout(() => {
-				blurBackground.style.display = 'none';
-				signIn.style.display = 'none';
-				blurBackground.style.opacity = '100%';
-				blurBackground.classList.remove('hide');
 				body.classList.remove('stop-scroll');
 				signInShown = false;
 			}, 900);
 		}
 		else if (loginShown && !login.contains(event.target)) {
-			blurBackground.classList.add('hide');
+			hide(blurBackground);
+			hide(login);
 			setTimeout(() => {
-				blurBackground.style.opacity = '100%';
-				blurBackground.style.display = 'none';
-				blurBackground.classList.remove('hide');
 				body.classList.remove('stop-scroll');
-				login.style.display = 'none';
 				loginShown = false;
 			}, 900);
 		}
 	}
 	startButton.onclick = () => {
 		if(!signInShown) {
-			signIn.style.display = 'block';
-			blurBackground.style.display = 'block';
-			blurBackground.classList.add('show');
+			show(signIn);
+			show(blurBackground);
 			body.classList.add('stop-scroll');
 			setTimeout(() => {
 				signInShown = true;
-				blurBackground.style.opacity = '100%';
-				blurBackground.classList.remove('show');
 			}, 900);
 		}
 	}
@@ -78,65 +69,42 @@ window.onload = () => {
 	}
 	loginButton.onclick = () => {
 		if(!loginShown) {
-			login.style.display = 'block';
-			blurBackground.style.display = 'block';
-			blurBackground.classList.add('show');
+			show(login);
+			show(blurBackground);
 			body.classList.add('stop-scroll');
 			setTimeout(() => {
 				loginShown = true;
-				blurBackground.style.opacity = '100%';
-				blurBackground.classList.remove('show');
 			}, 900);
 		}
 	}
 	document.getElementById('create-account').onclick = () => {
-		login.classList.add('hide');
+		hide(login);
 		setTimeout(() => {
-			login.style.opacity = '0%';
-			login.style.display = 'none';
-			login.classList.remove('hide');
 			loginShown = false;
 		}, 900);
-		signIn.style.display = 'block';
-		signIn.classList.add('show');
+		show(signIn);
 		setTimeout(() => {
 			signInShown = true;
-			signIn.style.opacity = '100%';
-			signIn.classList.remove('show');
 		}, 900);
 	}
 	document.getElementById('already-have-account').onclick = () => {
-		signIn.classList.add('hide');
+		hide(signIn);
 		setTimeout(() => {
-			signIn.style.opacity = '0%';
-			signIn.style.display = 'none';
-			signIn.classList.remove('hide');
 			signInShown = false;
 		}, 900);
-		login.style.display = 'block';
-		login.classList.add('show');
+		show(login);
+		blurBackground.scrollTo({top: 0, behavior: "smooth"});
 		setTimeout(() => {
 			loginShown = true;
-			login.style.opacity = '100%';
-			login.classList.remove('show');
 		}, 900);
 	}
 	document.getElementById('accept-cookies').onclick = () => {
-		cookiesBackground.classList.add('hide');
-		setTimeout(() => {
-			cookiesBackground.style.display = 'none';
-			cookiesBackground.classList.remove('hide');
-		}, 900);
+		hide(cookiesBackground);
 	}
 	document.getElementById('cookie-settings-button').onclick = () => {
-		cookieSettings.style.display = 'block';
-		cookieSettings.classList.add('show');
-		cookies.classList.add('hide');
+		show(cookieSettings);
+		hide(cookies);
 		body.classList.add('stop-scroll');
-		setTimeout(() => {
-			cookies.style.display = 'none';
-			cookies.classList.remove('hide');
-		}, 900);
 	}
 	document.getElementById('allow-all').onclick = () => {
 		hide(cookiesBackground);
