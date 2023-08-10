@@ -146,7 +146,6 @@ nav {
 }
 #carousel img {
 	height: 145px;
-	scale: 1.3;
 }
 #sign-in, #login {
 	position: fixed;
@@ -345,6 +344,9 @@ span {
 @keyframes opacity {
 	0% { opacity: 0 }
 	100% { opacity: 100% }
+}
+.smooth-zoom {
+	transition: 0.3s;
 }
 html {
 	color: #222;

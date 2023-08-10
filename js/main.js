@@ -29,21 +29,26 @@ window.onload = () => {
 	const cookieSettings = document.getElementById('cookie-settings');
 	const cookiesBackground = document.getElementById('cookies-background');
 	const icons = document.querySelectorAll('#carousel img');
-	icons.forEach(icon => {icon.style.transform = `scale(1.3)`})
+	icons.forEach(icon => {icon.style.transform = 'scale(1.1)'; icon.classList.add('smooth-zoom');});
 	document.getElementById('carousel').addEventListener('mousemove', function(e) {
 		const x = e.clientX;
 		icons.forEach(icon => {
 			const iconRect = icon.getBoundingClientRect();
 			const iconCenter = iconRect.left + iconRect.width / 2;
 			const distance = Math.abs(x - iconCenter);
-			const scale = 2 - Math.min(distance / 200, 0.7);
+			const scale = 2 - Math.min(distance / 500, 0.9);
 			icon.style.transform = `scale(${scale})`;
 		});
 	});
-	document.getElementById('carousel').addEventListener('mouseleave', () => {
-		const icons = document.querySelectorAll('#carousel img');
+	document.getElementById('carousel').addEventListener('mouseenter', () => {
 		icons.forEach(icon => {
-			icon.style.transform = `scale(1.3)`;
+			setTimeout(() => {icon.classList.remove('smooth-zoom')}, 300);
+		});
+	});
+	document.getElementById('carousel').addEventListener('mouseleave', () => {
+		icons.forEach(icon => {
+			icon.classList.add('smooth-zoom');
+			icon.style.transform = 'scale(1.1)';
 		});
 	});
 	startButton.onmouseenter = () => {
