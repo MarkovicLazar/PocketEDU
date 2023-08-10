@@ -28,6 +28,24 @@ window.onload = () => {
 	const cookies = document.getElementById('cookies');
 	const cookieSettings = document.getElementById('cookie-settings');
 	const cookiesBackground = document.getElementById('cookies-background');
+	const icons = document.querySelectorAll('#carousel img');
+	icons.forEach(icon => {icon.style.transform = `scale(1.3)`})
+	document.getElementById('carousel').addEventListener('mousemove', function(e) {
+		const x = e.clientX;
+		icons.forEach(icon => {
+			const iconRect = icon.getBoundingClientRect();
+			const iconCenter = iconRect.left + iconRect.width / 2;
+			const distance = Math.abs(x - iconCenter);
+			const scale = 1.65 - Math.min(distance / 1000, 0.35);
+			icon.style.transform = `scale(${scale})`;
+		});
+	});
+	document.getElementById('carousel').addEventListener('mouseleave', () => {
+		const icons = document.querySelectorAll('#carousel img');
+		icons.forEach(icon => {
+			icon.style.transform = `scale(1.3)`;
+		});
+	});
 	startButton.onmouseenter = () => {
 		startBackground.style.width = '45px';
 	}
