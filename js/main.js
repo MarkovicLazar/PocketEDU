@@ -36,7 +36,7 @@ window.onload = () => {
 			const iconRect = icon.getBoundingClientRect();
 			const iconCenter = iconRect.left + iconRect.width / 2;
 			const distance = Math.abs(x - iconCenter);
-			const scale = 1.65 - Math.min(distance / 1000, 0.35);
+			const scale = 2 - Math.min(distance / 200, 0.7);
 			icon.style.transform = `scale(${scale})`;
 		});
 	});
